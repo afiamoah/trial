@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {express, require } from 'express';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-private api = 'http:';
- JSON: any= {};
- express: any;
+// private api = 'http:';
+//  JSON: any= {};
+//  express: any;
 
- constructor(private http: Http) {
+express= require('express');
+app = express();
+
+ constructor(private http: Http, exo: express) {
 // this.getdata();
 // this.getconnect();
+this.exPress();
+
 alert('MTN IS TOO CORRUPT');
 
  }
@@ -29,10 +36,15 @@ alert('MTN IS TOO CORRUPT');
 // });
 // }
 
-// exPress() {
+exPress() {
+ this. app.get('/',  (req, res) => {
+res.send('haha');
 
 
-// }
+ });
+
+
+}
 
 
 
